@@ -9,6 +9,13 @@ pa=os.getcwd()
 #
 username="pythonsnake2018"#Pre setup for my friend here
 pword="56"#Set password here
+@app.after_request
+def apply_caching(response):
+    response.headers["X-Frame-Options"] = "SAMEORIGIN"
+    response.headers["Access-Control-Allow-Origin"]="*"
+    response.headers["Access-Control-Allow-Headers"]="range"
+    response.headers["Access-Control-Expose-Headers"]="Cache-Control, Content-Encoding, Content-Range"
+    return response
 @app.route("/")
 def go():
     return '''
