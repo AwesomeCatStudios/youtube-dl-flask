@@ -1,6 +1,19 @@
 from flask import *
 app=Flask(__name__)
 import pafy
+import os
+pa=os.getcwd()
+#PLEASE INSERT YOUR PYTHONANYWHERE USERNAME BELOW THE POUND SIGNS
+#
+#
+#
+username="pythonsnake2018"#Pre setup for my friend here
+
+@app.route('/static/<path:path>')
+def get_resource(path):  # pragma: no cover
+    return send_from_directory('static', path)
+
+
 @app.route('/youtubedl',methods=["POST","GET"])
 def save():
     if request.method=="GET":
@@ -49,16 +62,12 @@ window.location="https://raymondpeng2007.wix.com/games";
 
 
 
-        aarc=False
-        if aarc:
-            d(request.form["urld"],"/home/Pythonsnake2017/mysite/static/file1.html")
-            d(request.form["urld"],"/home/Pythonsnake2017/mysite/templates/file1.html")
-            video=1
-            video.title=""
-            video.description=""
+        
+        
+            
 
 
-        else:
+        
            video = pafy.new(request.form["urld"])
            if not request.form["filetype"] in ["m4a","mp3"]:
                best = video.getbest(preftype=request.form["filetype"])
@@ -66,9 +75,9 @@ window.location="https://raymondpeng2007.wix.com/games";
 
            else:
                best=video.getbestaudio(preftype=request.form["filetype"])
-               filename = best.download(filepath="/home/Pythonsnake2017/mysite/static/file1.html")
+               filename = best.download(filepath=(pa+"/static/"+"dlfile"))
                #filename = best.download(filepath="/home/Pythonsnake2017/mysite/templates/file1.html",quiet=False)
-        return '''
+           return '''
 <h1>FILE DONE</h1>
 <script type="text/javascript">
     var adfly_id = 19279991;
@@ -77,7 +86,7 @@ window.location="https://raymondpeng2007.wix.com/games";
 
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <div class="g-savetodrive"
-   data-src="http://pythonsnake2017.pythonanywhere.com/static/file1.html"
+   data-src="http://pythonsnake2017.pythonanywhere.com/static/dlfile"
    data-filename="youtubedl"
    data-sitename="PYTHON 3 Download url">
 </div>
