@@ -8,7 +8,17 @@ pa=os.getcwd()
 #
 #
 username="pythonsnake2018"#Pre setup for my friend here
-
+pword="56"#Set password here
+@app.route("/")
+def go():
+    return '''
+    <h1>Hello</h1>
+    <a href="/youtubedl">Youtube DL</a><br />
+    This is a youtube dl server<br />
+    You can make your own too <br />
+    
+    
+    '''
 @app.route('/static/<path:path>')
 def get_resource(path):  # pragma: no cover
     return send_from_directory('static', path)
