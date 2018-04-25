@@ -46,7 +46,7 @@ window.location="https://raymondpeng2007.wix.com/games";
 }
 }
 </script>
-<script type="text/javascript">
+<script type="text/javascript"
     var adfly_id = 19279991;
     var popunder_frequency_delay = 0;
 </script>
@@ -81,7 +81,7 @@ window.location="https://raymondpeng2007.wix.com/games";
            video = pafy.new(request.form["urld"])
            if not request.form["filetype"] in ["m4a","mp3"]:
                best = video.getbest(preftype=request.form["filetype"])
-               filename = best.download(filepath="/home/Pythonsnake2017/mysite/static/file1.html")
+               filename = best.download(filepath=(pa+"/static/"+"dlfile"))
 
            else:
                best=video.getbestaudio(preftype=request.form["filetype"])
