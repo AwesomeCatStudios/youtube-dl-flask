@@ -1,5 +1,5 @@
 from flask import *
-app=Flask()
+app=Flask(__name__)
 import pafy
 @app.route('/youtubedl',methods=["POST","GET"])
 def save():
