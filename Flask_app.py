@@ -50,7 +50,7 @@ window.location="https://raymondpeng2007.wix.com/games";
     var adfly_id = 19279991;
     var popunder_frequency_delay = 0;
 </script>
-<script src="http://cdn.adf.ly/js/display.js"></script>
+
 <script src='https://www.google.com/recaptcha/api.js'></script>
 <select name=filetype class="form-control">
   <option value="mp4">mp4</option>
