@@ -7,8 +7,8 @@ pa=os.getcwd()
 #
 #
 #
-username="pythonsnake2018"#Pre setup for my friend here
-pword="56"#Set password here
+username="Whatever Username You Have For Flask"
+pword="Whatever Password You Want To Use For Securing Your Youtube Downloader"
 @app.after_request
 def apply_caching(response):
     response.headers["X-Frame-Options"] = "SAMEORIGIN"
